@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="title">Employee Attendance & Leaves</h2>
+    <p class="breadcrumb">
+        Home / Administration Management / Human Resource Management / <strong>Employee Attendance & Leaves</strong>
+    </p>
+
+    <div class="form-container">
+        <label for="employeeId">Employee ID<span class="required">*</span></label>
+        <input id="employeeId" type="text" placeholder="Enter Employee ID" [(ngModel)]="employeeId" />
+
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Enter Name" [(ngModel)]="name" />
+
+        <label for="department">Department</label>
+        <input id="department" type="text" placeholder="Enter Department" [(ngModel)]="department" />
+
+        <label for="leaveDays">Leave Days</label>
+        <input id="leaveDays" type="number" placeholder="Enter Leave Days" [(ngModel)]="leaveDays" />
+
+        <button class="check-btn" (click)="checkLeaveStatus()">Check Leave Status</button>
+    </div>
+</div>

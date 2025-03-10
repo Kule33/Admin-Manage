@@ -1,0 +1,133 @@
+<div class="event-booking-container">
+    <div class="header-navigation">
+      <p class="breadcrumb">Home / Administration Management / Event Booking</p>
+      <h2>Event Booking</h2>
+    </div>
+  
+    <div class="event-form-container">
+      <h3>Events Description Form - Appendix A</h3>
+      
+      <form [formGroup]="bookingForm">
+        <div class="form-group">
+          <label for="companyName">Company / Institute Name*</label>
+          <input 
+            type="text" 
+            id="companyName" 
+            formControlName="companyName" 
+            class="form-control"
+            [ngClass]="{'is-invalid': bookingForm.get('companyName')?.touched && bookingForm.get('companyName')?.invalid}"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input 
+            type="email" 
+            id="email" 
+            formControlName="email" 
+            class="form-control"
+            [ngClass]="{'is-invalid': bookingForm.get('email')?.touched && bookingForm.get('email')?.invalid}"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone*</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            formControlName="phone" 
+            class="form-control"
+            [ngClass]="{'is-invalid': bookingForm.get('phone')?.touched && bookingForm.get('phone')?.invalid}"
+          />
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="startDate">Start Date*</label>
+            <div class="date-input-container">
+              <input 
+                type="text" 
+                id="startDate" 
+                formControlName="startDate" 
+                placeholder="DD / MM / YYYY"
+                class="form-control"
+                [ngClass]="{'is-invalid': bookingForm.get('startDate')?.touched && bookingForm.get('startDate')?.invalid}"
+              />
+              <button type="button" class="date-picker-btn" (click)="openDatePicker('startDate')">
+                <img src="assets/icons/calendar.png" alt="Calendar" />
+              </button>
+            </div>
+          </div>
+          
+          <div class="form-group half-width">
+            <label for="endDate">End Date*</label>
+            <div class="date-input-container">
+              <input 
+                type="text" 
+                id="endDate" 
+                formControlName="endDate" 
+                placeholder="DD / MM / YYYY"
+                class="form-control"
+                [ngClass]="{'is-invalid': bookingForm.get('endDate')?.touched && bookingForm.get('endDate')?.invalid}"
+              />
+              <button type="button" class="date-picker-btn" (click)="openDatePicker('endDate')">
+                <img src="assets/icons/calendar.png" alt="Calendar" />
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="startTime">Start Time*</label>
+            <div class="date-input-container">
+              <input 
+                type="text" 
+                id="startTime" 
+                formControlName="startTime" 
+                placeholder="HH:MM"
+                class="form-control"
+                [ngClass]="{'is-invalid': bookingForm.get('startTime')?.touched && bookingForm.get('startTime')?.invalid}"
+              />
+              <button type="button" class="date-picker-btn" (click)="openTimePicker('startTime')">
+                <img src="assets/icons/clock.png" alt="Clock" />
+              </button>
+            </div>
+          </div>
+          
+          <div class="form-group half-width">
+            <label for="endTime">End Time*</label>
+            <div class="date-input-container">
+              <input 
+                type="text" 
+                id="endTime" 
+                formControlName="endTime" 
+                placeholder="HH:MM"
+                class="form-control"
+                [ngClass]="{'is-invalid': bookingForm.get('endTime')?.touched && bookingForm.get('endTime')?.invalid}"
+              />
+              <button type="button" class="date-picker-btn" (click)="openTimePicker('endTime')">
+                <img src="assets/icons/clock.png" alt="Clock" />
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="eventDetails">Details about the Event*</label>
+          <textarea 
+            id="eventDetails" 
+            formControlName="eventDetails" 
+            class="form-control textarea"
+            rows="4"
+            [ngClass]="{'is-invalid': bookingForm.get('eventDetails')?.touched && bookingForm.get('eventDetails')?.invalid}"
+          ></textarea>
+        </div>
+      </form>
+      
+      <div class="navigation-buttons">
+        <button type="button" class="back-btn" (click)="goBack()">Back</button>
+        <button type="button" class="next-btn" (click)="goNext()">Next</button>
+      </div>
+    </div>
+  </div>

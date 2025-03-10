@@ -1,0 +1,117 @@
+// Container styling
+.institute-setup-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+// Title styling
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+// Breadcrumb styling
+.breadcrumb {
+    font-size: 14px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+
+    a {
+        text-decoration: none;
+        color: #3b82f6;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    span {
+        color: #475569;
+    }
+}
+
+// Streams list
+.stream-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+// Individual stream item (bar)
+.stream-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e5f1ff;
+    padding: 10px 20px;  // ✅ Adjusted padding for uniformity
+    border-radius: 8px;  // ✅ Made borders less sharp
+    border: 1px solid #3b82f6;
+    transition: 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // ✅ Softer shadow
+    width: 800px; // ✅ Fixed width
+    margin: 0 auto; // ✅ Center the bars
+    min-height: 40px; // ✅ Reduced height
+
+    &:hover {
+        background: #d0e4ff;
+    }
+
+    .stream-label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #1e3a8a;
+    }
+
+    .view-button {
+        background: white;
+        border: 1px solid #3b82f6;
+        color: #3b82f6;
+        padding: 5px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 500;
+        font-size: 14px;
+        margin-left: auto;  // ✅ Ensures proper alignment
+
+        &:hover {
+            background: #3b82f6;
+            color: white;
+        }
+    }
+}
+
+// Add Stream Button
+.add-stream {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e5f1ff;
+    padding: 12px;
+    border: 2px dashed #3b82f6;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-top: 14px;
+    transition: 0.3s;
+    width: 800px; // ✅ Match stream-item width
+    margin: 14px auto; // ✅ Center it properly
+
+    &:hover {
+        background: #d0e4ff;
+    }
+
+    span {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+}

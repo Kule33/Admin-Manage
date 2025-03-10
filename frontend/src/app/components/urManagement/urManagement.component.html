@@ -1,0 +1,64 @@
+<!-- Role Selection -->
+<div>
+    <label>
+      <input type="radio" name="roleType" value="student" (change)="onRoleChange('student')" [checked]="selectedRole === 'student'"> Student
+    </label>
+    <label>
+      <input type="radio" name="roleType" value="employee" (change)="onRoleChange('employee')" [checked]="selectedRole === 'employee'"> Employee
+    </label>
+    <label>
+      <input type="radio" name="roleType" value="lecturer" (change)="onRoleChange('lecturer')" [checked]="selectedRole === 'lecturer'"> Lecturer
+    </label>
+  </div>
+  
+  <!-- Student Data -->
+  <div *ngIf="selectedRole === 'student'">
+    <h3>Student List</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let student of studentData">
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td><button (click)="editRole(student)">Edit</button></td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Employee Data -->
+  <div *ngIf="selectedRole === 'employee'">
+    <h3>Employee List</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let employee of employeeData">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td><button (click)="editRole(employee)">Edit</button></td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Lecturer Data -->
+  <div *ngIf="selectedRole === 'lecturer'">
+    <h3>Lecturer List</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let lecturer of lecturerData">
+        <td>{{ lecturer.name }}</td>
+        <td>{{ lecturer.email }}</td>
+        <td><button (click)="editRole(lecturer)">Edit</button></td>
+      </tr>
+    </table>
+  </div>
+  

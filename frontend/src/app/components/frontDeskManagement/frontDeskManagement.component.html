@@ -1,0 +1,101 @@
+<div class="front-desk-container">
+    <h2>Front Desk Management</h2>
+    
+    <!-- Add New Entry Form -->
+    <div class="add-entry-form">
+      <h3>Add New Entry</h3>
+      <form (ngSubmit)="onSubmit()" #entryForm="ngForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Streams</label>
+            <input type="text" [(ngModel)]="newEntry.streams" name="streams" required>
+          </div>
+          <div class="form-group">
+            <label>Courses</label>
+            <input type="text" [(ngModel)]="newEntry.courses" name="courses" required>
+          </div>
+          <div class="form-group">
+            <label>Fee</label>
+            <input type="text" [(ngModel)]="newEntry.fee" name="fee" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Duration</label>
+            <input type="text" [(ngModel)]="newEntry.duration" name="duration" required>
+          </div>
+          <div class="form-group">
+            <label>Availability</label>
+            <input type="text" [(ngModel)]="newEntry.availability" name="availability" required>
+          </div>
+          <div class="form-group">
+            <label>Medium</label>
+            <input type="text" [(ngModel)]="newEntry.medium" name="medium" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Entry Requirements</label>
+            <input type="text" [(ngModel)]="newEntry.entryRequirements" name="entryRequirements" required>
+          </div>
+          <div class="form-group">
+            <label>Max Count</label>
+            <input type="text" [(ngModel)]="newEntry.maxCount" name="maxCount" required>
+          </div>
+          <div class="form-group">
+            <label>NVQ Level</label>
+            <input type="text" [(ngModel)]="newEntry.nvqLevel" name="nvqLevel" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label>Commencement Date & Time</label>
+            <input type="datetime-local" [(ngModel)]="newEntry.commencementDateTime" name="commencementDateTime" required>
+          </div>
+        </div>
+        
+        <button type="submit" [disabled]="!entryForm.form.valid">Add Entry</button>
+      </form>
+    </div>
+  
+    <!-- Table -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Streams</th>
+            <th>Courses</th>
+            <th>Fee</th>
+            <th>Duration</th>
+            <th>Availability</th>
+            <th>Medium</th>
+            <th>Entry Requirements</th>
+            <th>Max Count</th>
+            <th>NVQ Level</th>
+            <th>Commencement Date & Time</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of frontDeskData; let i = index">
+            <td>{{ item.streams }}</td>
+            <td>{{ item.courses }}</td>
+            <td>{{ item.fee }}</td>
+            <td>{{ item.duration }}</td>
+            <td>{{ item.availability }}</td>
+            <td>{{ item.medium }}</td>
+            <td>{{ item.entryRequirements }}</td>
+            <td>{{ item.maxCount }}</td>
+            <td>{{ item.nvqLevel }}</td>
+            <td>{{ item.commencementDateTime }}</td>
+            <td>
+              <button (click)="deleteEntry(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

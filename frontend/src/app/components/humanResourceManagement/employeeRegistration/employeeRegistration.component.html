@@ -1,0 +1,20 @@
+<div class="employee-registration">
+    <h3>Biographical Details</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-container">
+        <div class="form-group" *ngFor="let field of employeeFields">
+          <label for="{{ field.id }}">{{ field.label }} <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" id="{{ field.id }}" [(ngModel)]="employeeData[field.id]" name="{{ field.id }}" required />
+            <span class="edit-icon">✏️</span>
+          </div>
+        </div>
+      </div>
+      <div class="button-group">
+        <button type="button" class="back-button" (click)="onBack()">Back</button>
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </div>
+   
+  

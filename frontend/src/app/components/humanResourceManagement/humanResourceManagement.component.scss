@@ -1,0 +1,25 @@
+.hrm-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .hrm-tile {
+    padding: 20px;
+    background-color:#dbeafe;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    width: 200px;
+    transition: 0.3s;
+  }
+  
+  .hrm-tile:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  

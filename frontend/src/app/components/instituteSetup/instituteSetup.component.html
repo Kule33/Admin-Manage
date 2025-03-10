@@ -1,0 +1,28 @@
+<div class="institute-setup-container">
+    <h2 class="title">Administration Management</h2>
+  
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+      <a routerLink="/">Home</a>
+      <a routerLink="/institute-setup">Administration Management</a> /
+      <span>Institute Setup</span>
+    </div>
+  
+    <!-- Streams List -->
+    <div class="stream-list">
+      <div class="stream-item" *ngFor="let stream of streams; let i = index">
+        <span class="stream-label">Stream {{ i + 1 }} - {{ stream.name }}</span>
+  
+        <!-- Use (click) event instead of routerLink -->
+        <button class="view-button" (click)="navigateToStream(stream.id)">
+          View
+        </button>
+      </div>
+    </div>
+  
+    <!-- Add Stream Button -->
+    <div class="add-stream">
+      <span>+</span> Add Stream
+    </div>
+  </div>
+  

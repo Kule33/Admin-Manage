@@ -1,0 +1,65 @@
+<div class="tariff-container">
+    <div class="header-navigation">
+      <p class="breadcrumb">Home / Administration Management / Tariff</p>
+      <h2>Administration Management</h2>
+    </div>
+  
+    <div class="course-development-container">
+      <h3>A. Course Development Work</h3>
+      
+      <form [formGroup]="tariffForm">
+        <div class="grid-table">
+          <div class="grid-header">
+            <div class="header-item"></div>
+            <div class="header-item">Nos</div>
+            <div class="header-item">Rate per hr./ Cost</div>
+          </div>
+          
+          <div formArrayName="items">
+            <!-- Predefined rows -->
+            <div class="grid-row" *ngFor="let item of predefinedItems; let i = index" [formGroupName]="i">
+              <div class="grid-cell label-cell">{{ item.label }}</div>
+              <div class="grid-cell">
+                <input type="number" formControlName="quantity" class="form-input" />
+              </div>
+              <div class="grid-cell">
+                <input type="number" formControlName="cost" class="form-input" />
+              </div>
+            </div>
+            
+            <!-- Dynamic rows added by user -->
+            <div class="grid-row" *ngFor="let item of dynamicItems.controls; let i = index" [formGroupName]="i + predefinedItems.length">
+              <div class="grid-cell label-cell">
+                <input type="text" formControlName="description" class="form-input" />
+              </div>
+              <div class="grid-cell">
+                <input type="number" formControlName="quantity" class="form-input" />
+              </div>
+              <div class="grid-cell">
+                <input type="number" formControlName="cost" class="form-input" />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Add More buttons row -->
+          <div class="grid-row add-more-row">
+            <div class="grid-cell">
+              <button type="button" (click)="addItem()" class="add-more-btn">Add More</button>
+            </div>
+            <div class="grid-cell">
+              <button type="button" class="add-more-btn">Add More</button>
+            </div>
+            <div class="grid-cell">
+              <button type="button" class="add-more-btn">Add More</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button type="button" class="back-btn" (click)="goBack()">Back</button>
+          <button type="button" class="next-btn" (click)="goNext()">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,138 @@
+.event-booking-container {
+    max-width: 95%;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  
+  .header-navigation {
+    margin-bottom: 20px;
+  
+    .breadcrumb {
+      color: #1a0dab;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  
+    h2 {
+      color: #333;
+      font-size: 22px;
+      margin-top: 0;
+    }
+  }
+  
+  .event-form-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      
+      &::after {
+        content: "*";
+        color: red;
+        margin-left: 2px;
+      }
+    }
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    &.is-invalid {
+      border-color: #dc3545;
+    }
+    
+    &.textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .half-width {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  
+  .date-input-container {
+    display: flex;
+    align-items: center;
+    
+    .form-control {
+      flex: 1;
+    }
+    
+    .date-picker-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: -30px;
+      width: 24px;
+      height: 24px;
+      z-index: 2;
+      
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    
+    button {
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      
+      &.back-btn {
+        background-color: white;
+        color: #333;
+        border: 1px solid #6c757d;
+        
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+      
+      &.next-btn {
+        background-color: white;
+        color: #333;
+        border: 1px solid #6c757d;
+        
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
